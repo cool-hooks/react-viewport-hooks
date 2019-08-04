@@ -1,0 +1,64 @@
+{
+  "name": "react-viewport-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Jakub Biesiada",
+  "license": "MIT",
+  "main": "lib/react-viewport-hooks.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "release": "npm run prettier && npm run lint && npm run build:dev && npm run build",
+    "build": "webpack --env build",
+    "build:dev": "webpack --env dev",
+    "watch": "npm run build -- --watch",
+    "watch:dev": "npm run build:dev -- --watch",
+    "lint": "eslint 'src/**/*.tsx' --fix",
+    "prettier": "prettier --write 'src/**/*.tsx'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JB1905/react-viewport-hooks.git"
+  },
+  "keywords": [
+    "viewport",
+    "hooks",
+    "React",
+    "library"
+  ],
+  "bugs": {
+    "url": "https://github.com/JB1905/react-viewport-hooks/issues"
+  },
+  "homepage": "https://github.com/JB1905/react-viewport-hooks#readme",
+  "devDependencies": {
+    "@types/react": "^16.8.24",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{tsx}": [
+      "npm run prettier",
+      "npm run lint",
+      "git add"
+    ]
+  }
+}
