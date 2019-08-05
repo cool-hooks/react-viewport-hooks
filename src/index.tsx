@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react';
 
-export const useViewport = ({
-  updateOnResize = true
-}: {
-  updateOnResize: boolean;
-}) => {
+const defaultOptions = {
+  updateOnResize: true
+};
+
+export const useViewport = (options = defaultOptions) => {
   const [vw, setVW] = useState(window.innerWidth);
   const [vh, setVH] = useState(window.innerHeight);
+
+  const { updateOnResize } = options;
 
   useEffect(() => {
     if (updateOnResize) {
       window.addEventListener('resize', () => {
-        setVW(window.innerWidth);
-        setVH(window.innerHeight);
+        if (window.innerWidth !== vw) {
+          setVW(window.innerWidth);
+        }
+
+        if (window.innerHeight !== vh) {
+          setVH(window.innerHeight);
+        }
       });
     }
-  }, [updateOnResize]);
+  }, [updateOnResize, vh, vw]);
 
   return { vw, vh };
 };
