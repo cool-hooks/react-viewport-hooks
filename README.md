@@ -25,10 +25,12 @@ import { useViewport } from 'react-viewport-hooks';
 
 #### Options
 Name | Type | Default | Description
+-|-|-|-
 **updateOnResize** | boolean | `true` | Update sizes on window resize
 
 #### Returned Values
 Name | Type | Description
+-|-|-
 **vw** | `number` | Window viewport width
 **vh** | `number` | Window viewport height
 
