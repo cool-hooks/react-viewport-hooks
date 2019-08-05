@@ -31,8 +31,8 @@ Name | Type | Default | Description
 #### Returned Values
 Name | Type | Description
 -|-|-
-**vw** | `number` | Window viewport width
-**vh** | `number` | Window viewport height
+**vw** | number | Window viewport width
+**vh** | number | Window viewport height
 
 ## Example
 ```js
