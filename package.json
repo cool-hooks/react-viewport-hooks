@@ -1,7 +1,7 @@
 {
   "name": "react-viewport-hooks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Get real viewport width & height",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/react-viewport-hooks.js",

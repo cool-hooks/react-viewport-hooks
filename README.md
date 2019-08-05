@@ -4,7 +4,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/react-viewport-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
 
 ## About
-
+Get real viewport width & height
 
 ## How to Install
 First, install the library in your project by npm:
@@ -18,7 +18,21 @@ $ yarn add react-viewport-hooks
 ```
 
 ## Getting Started
+**• Import hook in React application file:**
+```js
+import { useViewport } from 'react-viewport-hooks';
+```
 
+#### Options
+Name | Type | Default | Description
+**updateOnResize** | boolean | `true` | Update sizes on window resize
+
+#### Returned Values
+Name | Type | Description
+**vw** | `number` | Window viewport width
+**vh** | `number` | Window viewport height
+
+## Example
 ```js
 import React, { useEffect } from 'react';
 import { useViewport } from 'react-viewport-hooks';
