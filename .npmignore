@@ -1,9 +1,8 @@
 src
 
 tsconfig.json
-.travis.yml
 .prettierrc
 
 .eslintrc.js
-webpack.config.js
+rollup.config.js
 yarn-error.log
