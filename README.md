@@ -36,7 +36,7 @@ Name | Type | Description
 
 ## Example
 ```js
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useViewport } from 'react-viewport-hooks';
 
 const App = () => {
