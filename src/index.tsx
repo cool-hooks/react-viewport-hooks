@@ -5,22 +5,26 @@ const defaultOptions = {
 };
 
 export const useViewport = (options = defaultOptions) => {
-  const [vw, setVW] = useState(window.innerWidth);
-  const [vh, setVH] = useState(window.innerHeight);
+  const [vw, setVW] = useState(0);
+  const [vh, setVH] = useState(0);
 
   const { updateOnResize } = options;
 
   useEffect(() => {
-    if (updateOnResize) {
-      window.addEventListener('resize', () => {
-        if (window.innerWidth !== vw) {
-          setVW(window.innerWidth);
-        }
+    const setSizes = () => {
+      if (window.innerWidth !== vw) {
+        setVW(window.innerWidth);
+      }
 
-        if (window.innerHeight !== vh) {
-          setVH(window.innerHeight);
-        }
-      });
+      if (window.innerHeight !== vh) {
+        setVH(window.innerHeight);
+      }
+    };
+
+    setSizes();
+
+    if (updateOnResize) {
+      window.addEventListener('resize', setSizes);
     }
   }, [updateOnResize, vh, vw]);
 
