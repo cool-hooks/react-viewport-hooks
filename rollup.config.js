@@ -1,29 +1,23 @@
 import resolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import commonjs from 'rollup-plugin-commonjs';
+
+import pkg from './package.json';
 
 export default {
-  input: ['src/index.tsx'],
+  input: 'src/index.tsx',
   output: [
     {
-      file: 'lib/react-viewport-hooks.esm.js',
-      format: 'es'
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true
     },
     {
-      file: 'lib/react-viewport-hooks.cjs.js',
-      format: 'cjs'
+      file: pkg.module,
+      format: 'es',
+      sourcemap: true
     }
   ],
-
-  plugins: [
-    resolve(),
-    typescript(),
-    terser(),
-    commonjs({
-      include: 'node_modules/**',
-      ignoreGlobal: true
-    })
-  ],
-  external: ['react']
+  plugins: [resolve(), typescript(), terser()],
+  external: Object.keys(pkg.peerDependencies)
 };
