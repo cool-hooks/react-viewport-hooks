@@ -11,8 +11,8 @@
     "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build",
     "build": "rollup -c",
     "watch": "npm run build -- --watch",
-    "lint": "eslint 'src/**/*.tsx' --fix",
-    "prettier": "prettier --write 'src/**/*.tsx'"
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "prettier": "prettier --write 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,6 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{tsx}": ["npm run prettier", "npm run lint", "git add"]
+    "src/**/*.{ts}": ["npm run prettier", "npm run lint", "git add"]
   }
 }
