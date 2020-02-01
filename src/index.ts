@@ -25,6 +25,8 @@ export const useViewport = (options = defaultOptions) => {
 
     if (updateOnResize) {
       window.addEventListener('resize', setSizes);
+
+      return () => window.removeEventListener('resize', setSizes);
     }
   }, [updateOnResize, vh, vw]);
 
