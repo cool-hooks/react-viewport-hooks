@@ -1,6 +1,6 @@
 # react-viewport-hooks Changelog
 
-## 1.1.2 beta 1 (2020-02-01)
+## 1.1.2 beta 1 / 1.1.2 (2020-02-01)
 #### Improvement
 - added event listener cleanup after resize
 
