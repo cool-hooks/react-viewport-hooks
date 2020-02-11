@@ -35,6 +35,7 @@ Name | Type | Description
 **vh** | number | Window viewport height
 
 ## Example
+**`useViewport` hook:**
 ```js
 import React from 'react';
 import { useViewport } from 'react-viewport-hooks';
@@ -51,6 +52,25 @@ const App = () => {
 }
 
 export default App;
+```
+
+**`withViewport` HOC:**
+```js
+// App.js
+
+import React from 'react';
+import { withViewport } from 'react-viewport-hooks';
+
+const App = ({ vw, vh }) => {
+  document.documentElement.style.setProperty('--vw', `${vw}px`);
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  return (
+    <h1>Hello Viewport!</h1>
+  );
+};
+
+export default withViewport(App);
 ```
 
 ## License

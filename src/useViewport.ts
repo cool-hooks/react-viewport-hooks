@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const defaultOptions = {
-  updateOnResize: true
-};
+import { defaultOptions } from './defaults';
 
-export const useViewport = (options = defaultOptions) => {
+import { Options } from './interfaces/options';
+
+export const useViewport = (options: Options = defaultOptions) => {
   const [vw, setVW] = useState(0);
   const [vh, setVH] = useState(0);
 
