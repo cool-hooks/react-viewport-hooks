@@ -1,2 +1,3 @@
 import React from 'react';
-export declare const withViewport: (WrappedComponent: React.ComponentClass<{}, any>) => (props: any) => JSX.Element;
+import { Options } from './interfaces/options';
+export declare const withViewport: (WrappedComponent: React.ComponentClass<{}, any>, options?: Options | undefined) => (props: any) => JSX.Element;
