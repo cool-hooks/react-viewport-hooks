@@ -1,6 +1,2 @@
-export declare const useViewport: (options?: {
-    updateOnResize: boolean;
-}) => {
-    vw: number;
-    vh: number;
-};
+export { useViewport } from './useViewport';
+export { withViewport } from './withViewport';
