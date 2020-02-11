@@ -1,6 +1,7 @@
 # react-viewport-hooks Changelog
 
-## 1.2.0 beta 2 / 1.2.0 beta 3 / 1.2.0 (2020-02-11)
+## 1.2.0 beta 2 / 1.2.0 beta 3 / 1.2.0 / 1.2.1 (2020-02-11)
+#### Bug Fix
 - added missing `options` prop to HOC
 
 ## 1.2.0 beta 1 (2020-02-11)
