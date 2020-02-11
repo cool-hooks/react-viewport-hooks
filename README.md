@@ -17,6 +17,7 @@ Or Yarn:
 $ yarn add react-viewport-hooks
 ```
 
+## Getting Started
 #### Options
 Name | Type | Default | Description
 -|-|-|-
@@ -28,7 +29,7 @@ Name | Type | Description
 **vw** | number | Window viewport width
 **vh** | number | Window viewport height
 
-## Getting Started
+#### Example
 **`useViewport` hook:**
 ```js
 import React from 'react';
