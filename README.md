@@ -50,8 +50,6 @@ export default App;
 
 **`withViewport` HOC:**
 ```js
-// App.js
-
 import React from 'react';
 import { withViewport } from 'react-viewport-hooks';
 
