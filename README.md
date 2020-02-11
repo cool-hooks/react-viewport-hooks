@@ -17,12 +17,6 @@ Or Yarn:
 $ yarn add react-viewport-hooks
 ```
 
-## Getting Started
-**• Import hook in React application file:**
-```js
-import { useViewport } from 'react-viewport-hooks';
-```
-
 #### Options
 Name | Type | Default | Description
 -|-|-|-
@@ -34,14 +28,14 @@ Name | Type | Description
 **vw** | number | Window viewport width
 **vh** | number | Window viewport height
 
-## Example
+## Getting Started
 **`useViewport` hook:**
 ```js
 import React from 'react';
 import { useViewport } from 'react-viewport-hooks';
 
 const App = () => {
-  const { vw, vh } = useViewport();
+  const { vw, vh } = useViewport(/* object with options (if needed) */);
 
   document.documentElement.style.setProperty('--vw', `${vw}px`);
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -70,7 +64,7 @@ const App = ({ vw, vh }) => {
   );
 };
 
-export default withViewport(App);
+export default withViewport(App, /* object with options (if needed) */);
 ```
 
 ## License
