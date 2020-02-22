@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useViewport } from '../src/useViewport';
+import { useViewport } from '../src';
 
 describe('useViewport', () => {
   it('should return window dimensions', () => {
