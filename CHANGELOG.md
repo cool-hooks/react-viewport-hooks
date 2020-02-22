@@ -1,5 +1,12 @@
 # react-viewport-hooks Changelog
 
+## 1.2.2 (2020-02-23)
+#### Bug Fix
+- fixed `WrappedComponent` type
+
+#### Repository Changes
+- added tests
+
 ## 1.2.0 beta 2 / 1.2.0 beta 3 / 1.2.0 / 1.2.1 (2020-02-11)
 #### Bug Fix
 - added missing `options` prop to HOC
