@@ -2,24 +2,34 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { useViewport } from '../src';
 
+declare global {
+  namespace NodeJS {
+    interface Global {
+      innerWidth: number;
+      innerHeight: number;
+      dispatchEvent: (event: Event) => void;
+    }
+  }
+}
+
 describe('useViewport', () => {
   afterEach(() => {
-    (global as any).innerWidth = 1024;
-    (global as any).innerHeight = 768;
+    global.innerWidth = 1024;
+    global.innerHeight = 768;
 
     act(() => {
-      (global as any).dispatchEvent(new Event('resize'));
+      global.dispatchEvent(new Event('resize'));
     });
   });
 
   it('should return window dimensions', () => {
     const { result } = renderHook(() => useViewport());
 
-    (global as any).innerWidth = 500;
-    (global as any).innerHeight = 300;
+    global.innerWidth = 500;
+    global.innerHeight = 300;
 
     act(() => {
-      (global as any).dispatchEvent(new Event('resize'));
+      global.dispatchEvent(new Event('resize'));
     });
 
     expect(result.current.vw).toBe(500);
@@ -33,11 +43,11 @@ describe('useViewport', () => {
 
     const { result } = renderHook(() => useViewport(options));
 
-    (global as any).innerWidth = 500;
-    (global as any).innerHeight = 300;
+    global.innerWidth = 500;
+    global.innerHeight = 300;
 
     act(() => {
-      (global as any).dispatchEvent(new Event('resize'));
+      global.dispatchEvent(new Event('resize'));
     });
 
     expect(result.current.vw).toBe(1024);
