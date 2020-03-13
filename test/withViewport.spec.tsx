@@ -3,8 +3,13 @@ import { render } from '@testing-library/react';
 
 import { withViewport } from '../src';
 
+interface Props {
+  vw: number;
+  vh: number;
+}
+
 describe('withViewport usage with functional component', () => {
-  const FunctionalComponent = ({ vw, vh }: any) => {
+  const FunctionalComponent = ({ vw, vh }: Props) => {
     return (
       <>
         <p>{vw}</p>
@@ -33,7 +38,7 @@ describe('withViewport usage with functional component', () => {
 });
 
 describe('withViewport usage with class component', () => {
-  class ClassComponent extends Component<any> {
+  class ClassComponent extends Component<Props> {
     render() {
       const { vw, vh } = this.props;
 
