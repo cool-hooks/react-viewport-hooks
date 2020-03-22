@@ -38,7 +38,7 @@ describe('useViewport', () => {
 
   it('should return window dimensions without update on resize', () => {
     const options = {
-      updateOnResize: false
+      updateOnResize: false,
     };
 
     const { result } = renderHook(() => useViewport(options));

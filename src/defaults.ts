@@ -1,3 +1,3 @@
 export const defaultOptions = {
-  updateOnResize: true
+  updateOnResize: true,
 };
