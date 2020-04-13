@@ -1,5 +1,12 @@
 # react-viewport-hooks Changelog
 
+## 1.3.0 (2020-04-14)
+#### Breaking Changes
+- removed default values for `vw` & `vh`
+
+#### New Feature
+- added options to set default values for `vw` & `vh`
+
 ## 1.2.2 (2020-02-23)
 #### Bug Fix
 - fixed `WrappedComponent` type
