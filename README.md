@@ -22,6 +22,8 @@ $ yarn add react-viewport-hooks
 Name | Type | Default | Description
 -|-|-|-
 **updateOnResize** | boolean | `true` | Update sizes on window resize
+**defaultVW** | number | `undefined` | Fallback for default `vw` value
+**defaultVH** | number | `undefined` | Fallback for default `vh` value
 
 #### Returned Values
 Name | Type | Description
