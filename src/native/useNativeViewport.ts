@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Dimensions } from 'react-native';
 
-import { defaultOptions } from '../defaults';
+import { defaultOptions } from './defaults';
 
-import { Options } from '../interfaces/options';
+import { Options } from './interfaces/options';
 
 export const useNativeViewport = (options: Options = defaultOptions) => {
-  const { updateOnResize, defaultVW, defaultVH } = options;
+  const { updateOnChange, source } = options;
 
-  const [vw, setVW] = useState(defaultVW);
-  const [vh, setVH] = useState(defaultVH);
+  const [vw, setVW] = useState<number>();
+  const [vh, setVH] = useState<number>();
 
   useEffect(() => {
     const setSizes = () => {
-      const { width, height } = Dimensions.get('window');
+      const { width, height } = Dimensions.get(source);
 
       if (width !== vw) {
         setVW(width);
@@ -26,12 +26,12 @@ export const useNativeViewport = (options: Options = defaultOptions) => {
 
     setSizes();
 
-    if (updateOnResize) {
+    if (updateOnChange) {
       Dimensions.addEventListener('change', setSizes);
 
       return () => Dimensions.removeEventListener('change', setSizes);
     }
-  }, [updateOnResize, vh, vw]);
+  }, [source, updateOnChange, vh, vw]);
 
   return { vw, vh };
 };
