@@ -8,19 +8,19 @@ import { Options } from './interfaces/options';
 export const useNativeViewport = (options: Options = defaultOptions) => {
   const { updateOnChange, source } = options;
 
-  const [vw, setVW] = useState<number>();
-  const [vh, setVH] = useState<number>();
+  const [vw, setVw] = useState<number>();
+  const [vh, setVh] = useState<number>();
 
   useEffect(() => {
     const setSizes = () => {
       const { width, height } = Dimensions.get(source);
 
       if (width !== vw) {
-        setVW(width);
+        setVw(width);
       }
 
       if (height !== vh) {
-        setVH(height);
+        setVh(height);
       }
     };
 

@@ -1,5 +1,10 @@
 # react-viewport-hooks Changelog
 
+## 2.0.0 (Soon)
+#### New Feature
+- added React Native support
+- added `initialVw` & `initialVh` values
+
 ## 1.3.0 (2020-04-14)
 #### Breaking Changes
 - removed default values for `vw` & `vh`

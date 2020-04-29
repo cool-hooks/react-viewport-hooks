@@ -1,6 +1,6 @@
 {
   "name": "react-viewport-hooks",
-  "version": "1.3.0",
+  "version": "2.0.0-alpha.1",
   "description": "Get real viewport width & height",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JB1905/react-viewport-hooks.git"
+    "url": "https://github.com/cool-hooks/react-viewport-hooks.git"
   },
   "keywords": [
     "viewport",
@@ -27,9 +27,9 @@
     "library"
   ],
   "bugs": {
-    "url": "https://github.com/JB1905/react-viewport-hooks/issues"
+    "url": "https://github.com/cool-hooks/react-viewport-hooks/issues"
   },
-  "homepage": "https://github.com/JB1905/react-viewport-hooks#readme",
+  "homepage": "https://github.com/cool-hooks/react-viewport-hooks#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
     "@testing-library/react": "^10.0.2",

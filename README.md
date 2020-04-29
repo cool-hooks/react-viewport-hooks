@@ -1,4 +1,4 @@
-# [react-viewport-hooks](https://github.com/jb1905/react-viewport-hooks)
+# [react-viewport-hooks](https://github.com/cool-hooks/react-viewport-hooks)
 
 [![NPM version](http://img.shields.io/npm/v/react-viewport-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
 [![NPM downloads](http://img.shields.io/npm/dm/react-viewport-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
