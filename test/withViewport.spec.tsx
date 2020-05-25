@@ -18,7 +18,7 @@ describe('withViewport usage with functional component', () => {
     );
   };
 
-  const FunctionalComponentHOC = withViewport(FunctionalComponent);
+  const FunctionalComponentHOC = withViewport()(FunctionalComponent);
 
   it('should render vw and wh values', () => {
     const { container } = render(<FunctionalComponentHOC />);
@@ -51,7 +51,7 @@ describe('withViewport usage with class component', () => {
     }
   }
 
-  const ClassComponentHOC = withViewport(ClassComponent);
+  const ClassComponentHOC = withViewport()(ClassComponent);
 
   it('should render vw and wh values', () => {
     const { container } = render(<ClassComponentHOC />);
