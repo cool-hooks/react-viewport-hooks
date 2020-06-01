@@ -1,6 +1,6 @@
 # react-viewport-hooks Changelog
 
-## 1.5.0 (2020-)
+## 1.5.0 (2020-06-01)
 
 #### Bug Fix
 
