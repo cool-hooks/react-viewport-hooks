@@ -1,5 +1,12 @@
 # react-viewport-hooks Changelog
 
+## 1.5.0 (2020-)
+
+#### Bug Fix
+
+- fixed incorrect options merging
+- fixed default value type
+
 ## 1.4.0 (2020-05-25)
 
 #### Breaking Changes

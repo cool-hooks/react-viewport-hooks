@@ -1,5 +1,5 @@
 export interface Options {
-  readonly defaultVW: number | null;
-  readonly defaultVH: number | null;
+  readonly defaultVW?: number;
+  readonly defaultVH?: number;
   readonly updateOnResize?: boolean;
 }

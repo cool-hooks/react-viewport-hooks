@@ -1,5 +1,5 @@
 export const defaultOptions = {
-  defaultVW: null,
-  defaultVH: null,
+  defaultVH: undefined,
+  defaultVW: undefined,
   updateOnResize: true,
 };
