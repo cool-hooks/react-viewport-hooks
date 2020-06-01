@@ -4,11 +4,14 @@ import { defaultOptions } from './defaults';
 
 import { Options } from './interfaces/options';
 
-export const useViewport = (options: Options = defaultOptions) => {
-  const { updateOnResize, defaultVW, defaultVH } = options;
+export const useViewport = (options?: Options) => {
+  const { updateOnResize, defaultVW, defaultVH } = {
+    ...defaultOptions,
+    ...options,
+  };
 
-  const [vw, setVW] = useState(defaultVW);
-  const [vh, setVH] = useState(defaultVH);
+  const [vw, setVW] = useState(defaultVW as number);
+  const [vh, setVH] = useState(defaultVH as number);
 
   useEffect(() => {
     const setSizes = () => {
