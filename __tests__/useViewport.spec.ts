@@ -28,9 +28,7 @@ describe('useViewport', () => {
     global.innerWidth = 500;
     global.innerHeight = 300;
 
-    act(() => {
-      global.dispatchEvent(new Event('resize'));
-    });
+    act(() => global.dispatchEvent(new Event('resize')));
 
     expect(result.current.vw).toBe(500);
     expect(result.current.vh).toBe(300);
@@ -46,9 +44,7 @@ describe('useViewport', () => {
     global.innerWidth = 500;
     global.innerHeight = 300;
 
-    act(() => {
-      global.dispatchEvent(new Event('resize'));
-    });
+    act(() => global.dispatchEvent(new Event('resize')));
 
     expect(result.current.vw).toBe(1024);
     expect(result.current.vh).toBe(768);
