@@ -17,9 +17,7 @@ describe('useViewport', () => {
     global.innerWidth = 1024;
     global.innerHeight = 768;
 
-    act(() => {
-      global.dispatchEvent(new Event('resize'));
-    });
+    act(() => global.dispatchEvent(new Event('resize')));
   });
 
   it('should return window dimensions', () => {
