@@ -8,7 +8,7 @@ interface Props {
   readonly vh: number;
 }
 
-const tree = ({ vw, vh }: Props) => (
+const renderResult = ({ vw, vh }: Props) => (
   <>
     <p data-testid="vw">{vw}</p>
     <p data-testid="vh">{vh}</p>
@@ -17,7 +17,7 @@ const tree = ({ vw, vh }: Props) => (
 
 describe('withViewport usage with functional component', () => {
   const FunctionalComponent = (props: Props) => {
-    return tree(props);
+    return renderResult(props);
   };
 
   const FunctionalComponentHOC = withViewport()(FunctionalComponent);
@@ -33,7 +33,7 @@ describe('withViewport usage with functional component', () => {
 describe('withViewport usage with class component', () => {
   class ClassComponent extends Component<Props> {
     render() {
-      return tree(this.props);
+      return renderResult(this.props);
     }
   }
 
