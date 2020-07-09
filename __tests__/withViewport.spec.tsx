@@ -4,68 +4,45 @@ import { render } from '@testing-library/react';
 import { withViewport } from '../src';
 
 interface Props {
-  vw: number;
-  vh: number;
+  readonly vw: number;
+  readonly vh: number;
 }
 
+const tree = ({ vw, vh }: Props) => (
+  <>
+    <p data-testid="vw">{vw}</p>
+    <p data-testid="vh">{vh}</p>
+  </>
+);
+
 describe('withViewport usage with functional component', () => {
-  const FunctionalComponent = ({ vw, vh }: Props) => {
-    return (
-      <>
-        <p>{vw}</p>
-        <p>{vh}</p>
-      </>
-    );
+  const FunctionalComponent = (props: Props) => {
+    return tree(props);
   };
 
   const FunctionalComponentHOC = withViewport()(FunctionalComponent);
 
   it('should render vw and wh values', () => {
-    const { container } = render(<FunctionalComponentHOC />);
+    const { getByTestId } = render(<FunctionalComponentHOC />);
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <p>
-        1024
-      </p>
-    `);
-
-    expect(container.lastChild).toMatchInlineSnapshot(`
-      <p>
-        768
-      </p>
-    `);
+    expect(getByTestId('vw').innerHTML).toBe('1024');
+    expect(getByTestId('vh').innerHTML).toBe('768');
   });
 });
 
 describe('withViewport usage with class component', () => {
   class ClassComponent extends Component<Props> {
     render() {
-      const { vw, vh } = this.props;
-
-      return (
-        <>
-          <p>{vw}</p>
-          <p>{vh}</p>
-        </>
-      );
+      return tree(this.props);
     }
   }
 
   const ClassComponentHOC = withViewport()(ClassComponent);
 
   it('should render vw and wh values', () => {
-    const { container } = render(<ClassComponentHOC />);
+    const { getByTestId } = render(<ClassComponentHOC />);
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <p>
-        1024
-      </p>
-    `);
-
-    expect(container.lastChild).toMatchInlineSnapshot(`
-      <p>
-        768
-      </p>
-    `);
+    expect(getByTestId('vw').innerHTML).toBe('1024');
+    expect(getByTestId('vh').innerHTML).toBe('768');
   });
 });

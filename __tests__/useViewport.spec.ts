@@ -12,39 +12,35 @@ declare global {
   }
 }
 
+const resize = () => {
+  act(() => {
+    global.dispatchEvent(new Event('resize'));
+  });
+};
+
 describe('useViewport', () => {
   afterEach(() => {
     global.innerWidth = 1024;
     global.innerHeight = 768;
 
-    act(() => global.dispatchEvent(new Event('resize')));
+    resize();
   });
 
-  it('should return window dimensions', () => {
-    const { result } = renderHook(() => useViewport());
+  it.each([
+    [{}, 500, 300],
+    [{ updateOnResize: false }, 1024, 768],
+  ])(
+    'should return $resultVw and $resultVh as new viewport values',
+    (options, resultVw, resultVh) => {
+      const { result } = renderHook(() => useViewport(options));
 
-    global.innerWidth = 500;
-    global.innerHeight = 300;
+      global.innerWidth = 500;
+      global.innerHeight = 300;
 
-    act(() => global.dispatchEvent(new Event('resize')));
+      resize();
 
-    expect(result.current.vw).toBe(500);
-    expect(result.current.vh).toBe(300);
-  });
-
-  it('should return window dimensions without update on resize', () => {
-    const options = {
-      updateOnResize: false,
-    };
-
-    const { result } = renderHook(() => useViewport(options));
-
-    global.innerWidth = 500;
-    global.innerHeight = 300;
-
-    act(() => global.dispatchEvent(new Event('resize')));
-
-    expect(result.current.vw).toBe(1024);
-    expect(result.current.vh).toBe(768);
-  });
+      expect(result.current.vw).toBe(resultVw);
+      expect(result.current.vh).toBe(resultVh);
+    }
+  );
 });
