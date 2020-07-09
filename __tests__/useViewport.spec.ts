@@ -30,7 +30,7 @@ describe('useViewport', () => {
     [{}, 500, 300],
     [{ updateOnResize: false }, 1024, 768],
   ])(
-    'should return $resultVw and $resultVh as new viewport values',
+    'should return $resultVw and $resultVh as new vw and vh values',
     (options, resultVw, resultVh) => {
       const { result } = renderHook(() => useViewport(options));
 
