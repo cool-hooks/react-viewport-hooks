@@ -4,8 +4,10 @@ import { useViewport } from './useViewport';
 
 import { Options } from './interfaces/options';
 
-export const withViewport = (options?: Options) => (
-  WrappedComponent: React.ComponentType<any>
-) => (props: React.ComponentProps<any>) => (
-  <WrappedComponent {...props} {...useViewport(options)} />
-);
+export function withViewport<T>(options?: Options) {
+  return (
+    WrappedComponent: React.ComponentType<T>
+  ) => (props: T) => (
+    <WrappedComponent {...props} {...useViewport(options)} />
+  );
+}
