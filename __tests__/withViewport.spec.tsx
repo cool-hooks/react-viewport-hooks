@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { render } from '@testing-library/react';
+import React, { Component } from "react";
+import { render } from "@testing-library/react";
 
-import { withViewport } from '../src';
+import { withViewport } from "../src";
 
 interface Props {
   readonly vw: number;
@@ -15,34 +15,34 @@ const renderResult = ({ vw, vh }: Props) => (
   </>
 );
 
-describe('withViewport usage with functional component', () => {
-  const FunctionalComponent = (props: Props) => {
+describe("withViewport usage with functional component", () => {
+  const FunctionalComponent: React.FC<Props> = (props) => {
     return renderResult(props);
   };
 
-  const FunctionalComponentHOC = withViewport()(FunctionalComponent);
+  const FunctionalComponentHOC = withViewport<any>()(FunctionalComponent); // TODO
 
-  it('should render vw and wh values', () => {
+  it("should render vw and wh values", () => {
     const { getByTestId } = render(<FunctionalComponentHOC />);
 
-    expect(getByTestId('vw').innerHTML).toBe('1024');
-    expect(getByTestId('vh').innerHTML).toBe('768');
+    expect(getByTestId("vw").innerHTML).toBe("1024");
+    expect(getByTestId("vh").innerHTML).toBe("768");
   });
 });
 
-describe('withViewport usage with class component', () => {
+describe("withViewport usage with class component", () => {
   class ClassComponent extends Component<Props> {
     render() {
       return renderResult(this.props);
     }
   }
 
-  const ClassComponentHOC = withViewport()(ClassComponent);
+  const ClassComponentHOC = withViewport<any>()(ClassComponent); // TODO
 
-  it('should render vw and wh values', () => {
+  it("should render vw and wh values", () => {
     const { getByTestId } = render(<ClassComponentHOC />);
 
-    expect(getByTestId('vw').innerHTML).toBe('1024');
-    expect(getByTestId('vh').innerHTML).toBe('768');
+    expect(getByTestId("vw").innerHTML).toBe("1024");
+    expect(getByTestId("vh").innerHTML).toBe("768");
   });
 });
