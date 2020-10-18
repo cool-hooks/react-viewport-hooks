@@ -16,11 +16,11 @@ const renderResult = ({ vw, vh }: Props) => (
 );
 
 describe("withViewport usage with functional component", () => {
-  const FunctionalComponent: React.FC<Props> = (props) => {
+  const FunctionalComponent = (props: Props) => {
     return renderResult(props);
   };
 
-  const FunctionalComponentHOC = withViewport<any>()(FunctionalComponent); // TODO
+  const FunctionalComponentHOC = withViewport()(FunctionalComponent);
 
   it("should render vw and wh values", () => {
     const { getByTestId } = render(<FunctionalComponentHOC />);
@@ -37,7 +37,7 @@ describe("withViewport usage with class component", () => {
     }
   }
 
-  const ClassComponentHOC = withViewport<any>()(ClassComponent); // TODO
+  const ClassComponentHOC = withViewport()(ClassComponent);
 
   it("should render vw and wh values", () => {
     const { getByTestId } = render(<ClassComponentHOC />);
