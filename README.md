@@ -1,7 +1,7 @@
 # [react-viewport-hooks](https://github.com/jb1905/react-viewport-hooks)
 
-[![NPM version](http://img.shields.io/npm/v/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
-[![NPM downloads](http://img.shields.io/npm/dm/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
+[![NPM version](https://img.shields.io/npm/v/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
+[![NPM downloads](https://img.shields.io/npm/dm/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
 [![NPM license](https://img.shields.io/npm/l/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
 [![Codecov](https://img.shields.io/codecov/c/github/JB1905/react-viewport-hooks?style=flat-square)](https://codecov.io/gh/cool-hooks/react-viewport-hooks)
 [![Travis](https://img.shields.io/travis/cool-hooks/react-viewport-hooks/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-viewport-hooks)
