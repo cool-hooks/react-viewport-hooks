@@ -3,12 +3,9 @@ import { render } from '@testing-library/react';
 
 import { withViewport } from '../src';
 
-interface Props {
-  readonly vw: number;
-  readonly vh: number;
-}
+import { Sizes } from '../src/interfaces/sizes';
 
-const renderResult = ({ vw, vh }: Props) => (
+const renderResult = ({ vw, vh }: Sizes) => (
   <>
     <p data-testid="vw">{vw}</p>
     <p data-testid="vh">{vh}</p>
@@ -16,7 +13,7 @@ const renderResult = ({ vw, vh }: Props) => (
 );
 
 describe('withViewport usage with functional component', () => {
-  const FunctionalComponent = (props: Props) => {
+  const FunctionalComponent = (props: Sizes) => {
     return renderResult(props);
   };
 
@@ -31,7 +28,7 @@ describe('withViewport usage with functional component', () => {
 });
 
 describe('withViewport usage with class component', () => {
-  class ClassComponent extends Component<Props> {
+  class ClassComponent extends Component<Sizes> {
     render() {
       return renderResult(this.props);
     }
