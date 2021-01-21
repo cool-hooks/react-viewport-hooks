@@ -2,7 +2,6 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { useViewport } from '../src';
 
-// TODO
 declare global {
   namespace NodeJS {
     interface Global {
