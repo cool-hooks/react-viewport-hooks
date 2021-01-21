@@ -5,41 +5,35 @@ import { withViewport } from '../src';
 
 import { Sizes } from '../src/interfaces/sizes';
 
-const renderResult = ({ vw, vh }: Sizes) => (
-  <>
-    <p data-testid="vw">{vw}</p>
-    <p data-testid="vh">{vh}</p>
-  </>
-);
+const checkResult = ({ vw, vh }: Sizes) => {
+  expect(vw).toBe(1024);
+  expect(vh).toBe(768);
+
+  return null;
+};
 
 describe('withViewport usage with functional component', () => {
   const FunctionalComponent = (props: Sizes) => {
-    return renderResult(props);
+    return checkResult(props);
   };
 
   const FunctionalComponentHOC = withViewport()(FunctionalComponent);
 
   it('should render vw and wh values', () => {
-    const { getByTestId } = render(<FunctionalComponentHOC />);
-
-    expect(getByTestId('vw').innerHTML).toBe('1024');
-    expect(getByTestId('vh').innerHTML).toBe('768');
+    render(<FunctionalComponentHOC />);
   });
 });
 
 describe('withViewport usage with class component', () => {
   class ClassComponent extends Component<Sizes> {
     render() {
-      return renderResult(this.props);
+      return checkResult(this.props);
     }
   }
 
   const ClassComponentHOC = withViewport()(ClassComponent);
 
   it('should render vw and wh values', () => {
-    const { getByTestId } = render(<ClassComponentHOC />);
-
-    expect(getByTestId('vw').innerHTML).toBe('1024');
-    expect(getByTestId('vh').innerHTML).toBe('768');
+    render(<ClassComponentHOC />);
   });
 });
