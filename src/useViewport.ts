@@ -5,13 +5,13 @@ import { defaultOptions } from './defaults';
 import { Options } from './interfaces/options';
 
 export const useViewport = (options?: Options) => {
-  const { updateOnResize, defaultVW, defaultVH } = {
+  const { updateOnResize, defaultVw, defaultVh } = {
     ...defaultOptions,
     ...options,
   };
 
-  const [vw, setVW] = useState(defaultVW as number);
-  const [vh, setVH] = useState(defaultVH as number);
+  const [vw, setVW] = useState(defaultVw as number);
+  const [vh, setVH] = useState(defaultVh as number);
 
   useEffect(() => {
     const setSizes = () => {
