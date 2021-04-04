@@ -11,6 +11,10 @@
 
 Get real viewport width & height
 
+### Demo
+
+**[Playground – play with library in CodeSandbox](https://codesandbox.io/s/react-viewport-hooks-m8qxm)**
+
 ## How to Install
 
 First, install the library in your project by npm:
