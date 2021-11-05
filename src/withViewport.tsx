@@ -7,6 +7,6 @@ import { Sizes } from './interfaces/sizes';
 
 export function withViewport(options?: Options) {
   return <T,>(WrappedComponent: React.ComponentType<T & Sizes>) => (
-    props: T
-  ) => <WrappedComponent {...props} {...useViewport(options)} />;
+    props: Omit<T, keyof ReturnType<typeof useViewport>>
+  ) => <WrappedComponent {...props as T} {...useViewport(options)} />;
 }
