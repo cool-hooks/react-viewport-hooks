@@ -13,7 +13,10 @@ Get real viewport width & height
 
 ### Demo
 
-**[Playground – play with library in CodeSandbox](https://codesandbox.io/s/hooks-demo-m8qxm)**
+Playground – play with library in CodeSandbox
+
+- **[hooks](https://codesandbox.io/s/hooks-demo-m8qxm)**
+- **[HOC - Soon](#)**
 
 ## How to Install
 
