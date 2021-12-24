@@ -3,7 +3,10 @@ import { render } from '@testing-library/react';
 
 import { withViewport } from '../src';
 
-import type { Sizes } from '../src/types/sizes';
+interface Sizes {
+  readonly vw: number;
+  readonly vh: number;
+}
 
 const checkResult = ({ vw, vh }: Sizes) => {
   expect(vw).toBe(1024);

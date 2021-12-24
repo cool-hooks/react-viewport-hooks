@@ -9,7 +9,7 @@
 
 ## About
 
-Get real viewport width & height
+Get the real width and height of the window
 
 ### Demo
 
@@ -36,18 +36,18 @@ $ yarn add react-viewport-hooks
 
 ### Options
 
-| Name               | Type    | Default     | Description                     |
-| ------------------ | ------- | ----------- | ------------------------------- |
-| **updateOnResize** | boolean | `true`      | Update sizes on window resize   |
-| **defaultVw**      | number  | `undefined` | Fallback for default `vw` value |
-| **defaultVh**      | number  | `undefined` | Fallback for default `vh` value |
+| Name               | Type    | Default     | Description                               |
+| ------------------ | ------- | ----------- | ----------------------------------------- |
+| **updateOnResize** | boolean | `true`      | Update the sizes when resizing the window |
+| **defaultVw**      | number  | `undefined` | Fallback for the default `vw` value       |
+| **defaultVh**      | number  | `undefined` | Fallback for the default `vh` value       |
 
 ### Returned Values
 
-| Name   | Type   | Description            |
-| ------ | ------ | ---------------------- |
-| **vw** | number | Window viewport width  |
-| **vh** | number | Window viewport height |
+| Name   | Type   | Description                   |
+| ------ | ------ | ----------------------------- |
+| **vw** | number | Width of the window viewport  |
+| **vh** | number | Height of the window viewport |
 
 ### Example
 

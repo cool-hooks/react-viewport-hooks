@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 
-import type { Options } from './types/Options';
+import type { Options } from './types';
 
 const defaultOptions = {
   defaultVh: undefined,
