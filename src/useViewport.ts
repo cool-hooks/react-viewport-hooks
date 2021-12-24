@@ -1,26 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
-import { defaultOptions } from './defaults';
+import type { Options } from './types/Options';
 
-import { Options } from './interfaces/options';
+const defaultOptions = {
+  defaultVh: undefined,
+  defaultVw: undefined,
+  updateOnResize: true,
+};
 
 export const useViewport = (options?: Options) => {
-  const { updateOnResize, defaultVw, defaultVh } = {
-    ...defaultOptions,
-    ...options,
-  };
+  const { updateOnResize, defaultVw, defaultVh } = useMemo(
+    () => ({
+      ...defaultOptions,
+      ...(options || {}),
+    }),
+    [options]
+  );
 
-  const [vw, setVW] = useState(defaultVw as number);
-  const [vh, setVH] = useState(defaultVh as number);
+  const [vw, setVw] = useState(defaultVw);
+  const [vh, setVh] = useState(defaultVh);
 
   useEffect(() => {
     const setSizes = () => {
       if (window.innerWidth !== vw) {
-        setVW(window.innerWidth);
+        setVw(window.innerWidth);
       }
 
       if (window.innerHeight !== vh) {
-        setVH(window.innerHeight);
+        setVh(window.innerHeight);
       }
     };
 

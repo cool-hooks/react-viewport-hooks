@@ -1,15 +1,22 @@
-# [react-viewport-hooks](https://github.com/jb1905/react-viewport-hooks)
+# [react-viewport-hooks](https://github.com/cool-hooks/react-viewport-hooks)
 
 [![NPM version](https://img.shields.io/npm/v/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
 [![NPM downloads](https://img.shields.io/npm/dm/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
 [![NPM license](https://img.shields.io/npm/l/react-viewport-hooks?style=flat-square)](https://www.npmjs.com/package/react-viewport-hooks)
-[![Codecov](https://img.shields.io/codecov/c/github/JB1905/react-viewport-hooks?style=flat-square)](https://codecov.io/gh/cool-hooks/react-viewport-hooks)
-[![Travis](https://img.shields.io/travis/cool-hooks/react-viewport-hooks/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-viewport-hooks)
+[![Codecov](https://img.shields.io/codecov/c/github/cool-hooks/react-viewport-hooks?style=flat-square)](https://codecov.io/gh/cool-hooks/react-viewport-hooks)
+[![Travis](https://img.shields.io/travis/com/cool-hooks/react-viewport-hooks/main?style=flat-square)](https://app.travis-ci.com/github/cool-hooks/react-viewport-hooks)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-viewport-hooks?style=flat-square)](https://bundlephobia.com/result?p=react-viewport-hooks)
 
 ## About
 
 Get real viewport width & height
+
+### Demo
+
+Play with the library in CodeSandbox
+
+- [hooks](https://codesandbox.io/s/hooks-demo-m8qxm)
+- [HOC](https://codesandbox.io/s/hoc-demo-9998s)
 
 ## How to Install
 
@@ -27,7 +34,7 @@ $ yarn add react-viewport-hooks
 
 ## Getting Started
 
-#### Options
+### Options
 
 | Name               | Type    | Default     | Description                     |
 | ------------------ | ------- | ----------- | ------------------------------- |
@@ -35,14 +42,14 @@ $ yarn add react-viewport-hooks
 | **defaultVw**      | number  | `undefined` | Fallback for default `vw` value |
 | **defaultVh**      | number  | `undefined` | Fallback for default `vh` value |
 
-#### Returned Values
+### Returned Values
 
 | Name   | Type   | Description            |
 | ------ | ------ | ---------------------- |
 | **vw** | number | Window viewport width  |
 | **vh** | number | Window viewport height |
 
-#### Example
+### Example
 
 **`useViewport` hook:**
 

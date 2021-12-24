@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import { withViewport } from '../src';
 
-import { Sizes } from '../src/interfaces/sizes';
+import type { Sizes } from '../src/types/sizes';
 
 const checkResult = ({ vw, vh }: Sizes) => {
   expect(vw).toBe(1024);
@@ -12,7 +12,6 @@ const checkResult = ({ vw, vh }: Sizes) => {
   return null;
 };
 
-// TODO WAIT FOR RENDER
 describe('withViewport usage with functional component', () => {
   const FunctionalComponent = (props: Sizes) => {
     return checkResult(props);
@@ -32,10 +31,12 @@ describe('withViewport usage with class component', () => {
     }
   }
 
-  const ClassComponentHOC = withViewport()(ClassComponent);
+  const ClassComponentHOC = withViewport({
+    defaultVw: 320,
+    defaultVh: 560,
+  })(ClassComponent);
 
   it('should render vw and wh values', () => {
-    // TODO
-    render(<ClassComponentHOC vw={1} vh={2} />);
+    render(<ClassComponentHOC />);
   });
 });
