@@ -9,7 +9,7 @@
 
 ## About
 
-Get the real width and height of the window
+Get the real width & height of the window
 
 ### Demo
 
@@ -54,14 +54,16 @@ $ yarn add react-viewport-hooks
 **`useViewport` hook:**
 
 ```js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useViewport } from 'react-viewport-hooks';
 
 const App = () => {
   const { vw, vh } = useViewport(/* object with options (if needed) */);
 
-  document.documentElement.style.setProperty('--vw', `${vw}px`);
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  useEffect(() => {
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }, [vw, vh]);
 
   return <h1>Hello Viewport!</h1>;
 };
@@ -72,12 +74,14 @@ export default App;
 **`withViewport` HOC:**
 
 ```js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withViewport } from 'react-viewport-hooks';
 
 const App = ({ vw, vh }) => {
-  document.documentElement.style.setProperty('--vw', `${vw}px`);
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  useEffect(() => {
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }, [vw, vh]);
 
   return <h1>Hello Viewport!</h1>;
 };
